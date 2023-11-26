@@ -2,7 +2,7 @@
 session_start();
 
 // Security check: Only allow access if the request is a POST request
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     die('Access denied.');
 }
 

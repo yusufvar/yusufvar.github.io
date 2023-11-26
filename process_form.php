@@ -1,6 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Retrieve form data
     $name = $_POST['name'];
@@ -22,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $body .= "<p><strong>Subject:</strong> $subject</p>";
     $body .= "<p><strong>Message:</strong> $message</p>";
 
-    // Send email
+    ini_set("smtp_port", "25");
+        // Send email
     if (mail($to, $subject, $body, $headers)) {
         echo 'Email sent successfully.';
     } else {
